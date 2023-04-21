@@ -1,6 +1,20 @@
 import { Button, Container } from 'react-bootstrap';
 
-export const GameOverScreen = ({ currentScore, setIsGameStarted }) => {
+export const GameOverScreen = ({
+  currentScore,
+  setIsGameOver,
+  setIsGameStarted,
+  currentLevel,
+  setCurrentScore,
+  setCurrentLevel,
+}) => {
+  const onNewGameClick = () => {
+    setIsGameOver(false);
+    setIsGameStarted(true);
+    setCurrentScore(0);
+    setCurrentLevel(1);
+  };
+
   return (
     <Container
       style={{ maxWidth: '600px' }}
@@ -9,7 +23,7 @@ export const GameOverScreen = ({ currentScore, setIsGameStarted }) => {
       <p className="fs-3">Game Over!</p>
 
       <p className="fs-5">
-        You reached <b>X</b> level. Great job!
+        You reached <b>{currentLevel}</b> level. Great job!
       </p>
 
       <p className="fs-5">
@@ -26,7 +40,7 @@ export const GameOverScreen = ({ currentScore, setIsGameStarted }) => {
         come back to play again soon.
       </p>
 
-      <Button size="lg" className="mt-4">
+      <Button onClick={() => onNewGameClick()} size="lg" className="mt-4">
         New game
       </Button>
     </Container>
