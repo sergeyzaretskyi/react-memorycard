@@ -4,33 +4,52 @@ import { StartScreen } from './StartScreen';
 import { GameOverScreen } from './GameOverScreen';
 import { LevelOverlay } from './LevelOverlay';
 import { useEffect, useState } from 'react';
-import { animalNames, animalsNeeded } from '../utils/utils';
+import { animalNames, animalsNeeded, shuffleArray } from '../utils/utils';
 
-const GameStarted = ({ showLevelOverlay }) => {
-  const [currentLevel, setCurrentLevel] = useState(1);
+const GameStarted = ({
+  currentLevel,
+  setCurrentLevel,
+  showLevelOverlay,
+  setIsGameOver,
+  setIsGameStarted,
+  highestScore,
+  setHighestScore,
+  currentScore,
+  setCurrentScore,
+}) => {
+  const [clickedAnimals, setClickedAnimals] = useState([]);
 
   const renderAnimals = (count) => {
     return (
       <>
-        {animalNames.slice(0, count).map((name) => (
-          <GameCard
-            key={name}
-            animal={name}
-            onClick={(e) => onAnimalClick(e)}
-          />
-        ))}
+        {shuffleArray(
+          animalNames.slice(0, count).map((name) => (
+            <GameCard
+              key={name}
+              animal={name}
+              {...{
+                clickedAnimals,
+                setClickedAnimals,
+                setIsGameOver,
+                setIsGameStarted,
+                currentScore,
+                setCurrentScore,
+                highestScore,
+                setHighestScore,
+                currentLevel,
+                setCurrentLevel,
+              }}
+            />
+          ))
+        )}
       </>
     );
-  };
-
-  const onAnimalClick = (e) => {
-    console.log(e.target.name);
   };
 
   return (
     <>
       {showLevelOverlay ? (
-        <LevelOverlay />
+        <LevelOverlay {...{ currentLevel }} />
       ) : (
         renderAnimals(animalsNeeded(currentLevel))
       )}
@@ -38,11 +57,28 @@ const GameStarted = ({ showLevelOverlay }) => {
   );
 };
 
-const GameNotStarted = ({ isGameOver, currentScore, setIsGameStarted }) => {
+const GameNotStarted = ({
+  isGameOver,
+  currentScore,
+  setIsGameOver,
+  setIsGameStarted,
+  currentLevel,
+  setCurrentScore,
+  setCurrentLevel,
+}) => {
   return (
     <>
       {isGameOver ? (
-        <GameOverScreen {...{ currentScore, setIsGameStarted }} />
+        <GameOverScreen
+          {...{
+            currentScore,
+            currentLevel,
+            setIsGameOver,
+            setIsGameStarted,
+            setCurrentScore,
+            setCurrentLevel,
+          }}
+        />
       ) : (
         <StartScreen {...{ setIsGameStarted }} />
       )}
@@ -54,10 +90,14 @@ export const GameBoard = ({
   isGameOver,
   setIsGameOver,
   currentScore,
+  highestScore,
   isGameStarted,
   setIsGameStarted,
+  setHighestScore,
+  setCurrentScore,
 }) => {
   const [showLevelOverlay, setShowLevelOverlay] = useState(true);
+  const [currentLevel, setCurrentLevel] = useState(1);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -70,9 +110,31 @@ export const GameBoard = ({
   return (
     <Container className="mt-3 d-flex gap-2 justify-content-center flex-wrap">
       {isGameStarted ? (
-        <GameStarted {...{ showLevelOverlay }} />
+        <GameStarted
+          {...{
+            currentLevel,
+            setCurrentLevel,
+            showLevelOverlay,
+            setIsGameOver,
+            setIsGameStarted,
+            highestScore,
+            setHighestScore,
+            currentScore,
+            setCurrentScore,
+          }}
+        />
       ) : (
-        <GameNotStarted {...{ isGameOver, currentScore, setIsGameStarted }} />
+        <GameNotStarted
+          {...{
+            isGameOver,
+            currentLevel,
+            currentScore,
+            setIsGameOver,
+            setIsGameStarted,
+            setCurrentScore,
+            setCurrentLevel,
+          }}
+        />
       )}
     </Container>
   );
