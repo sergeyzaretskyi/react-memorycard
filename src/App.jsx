@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GameBoard } from './components/GameBoard';
 import { ScoreBoard } from './components/ScoreBoard';
 
@@ -10,6 +10,10 @@ export const App = () => {
   );
   const [currentScore, setCurrentScore] = useState(0);
 
+  useEffect(() => {
+    localStorage.setItem('highestScore', highestScore);
+  }, [highestScore]);
+
   return (
     <>
       <ScoreBoard {...{ highestScore, currentScore }} />
@@ -18,8 +22,11 @@ export const App = () => {
           isGameOver,
           setIsGameOver,
           currentScore,
+          highestScore,
           isGameStarted,
           setIsGameStarted,
+          setHighestScore,
+          setCurrentScore,
         }}
       />
     </>
