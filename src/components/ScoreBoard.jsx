@@ -4,7 +4,7 @@ export const ScoreBoard = ({ highestScore, currentScore }) => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">🎴 Remember The Animal</Navbar.Brand>
+        <Navbar.Brand>🎴 Remember The Animal</Navbar.Brand>
         <div>
           <Navbar.Text className="fs-5 me-5">
             Current score: {currentScore}
