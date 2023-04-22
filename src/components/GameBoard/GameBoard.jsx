@@ -16,6 +16,8 @@ export const GameBoard = ({
   setCurrentLevel,
   showLevelOverlay,
   setShowLevelOverlay,
+  clickedAnimals,
+  setClickedAnimals,
 }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -40,6 +42,8 @@ export const GameBoard = ({
             setHighestScore,
             currentScore,
             setCurrentScore,
+            clickedAnimals,
+            setClickedAnimals,
           }}
         />
       ) : (
@@ -52,6 +56,7 @@ export const GameBoard = ({
             setIsGameStarted,
             setCurrentScore,
             setCurrentLevel,
+            setClickedAnimals,
           }}
         />
       )}

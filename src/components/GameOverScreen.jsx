@@ -13,6 +13,7 @@ export const GameOverScreen = ({
     setIsGameStarted(true);
     setCurrentScore(0);
     setCurrentLevel(1);
+    setClickedAnimals([]);
   };
 
   return (

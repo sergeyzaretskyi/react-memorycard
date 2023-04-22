@@ -9,6 +9,7 @@ export const GameNotStarted = ({
   currentLevel,
   setCurrentScore,
   setCurrentLevel,
+  setClickedAnimals,
 }) => {
   return (
     <>
@@ -21,6 +22,7 @@ export const GameNotStarted = ({
             setIsGameStarted,
             setCurrentScore,
             setCurrentLevel,
+            setClickedAnimals,
           }}
         />
       ) : (

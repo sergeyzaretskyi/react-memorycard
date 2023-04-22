@@ -8,6 +8,7 @@ export const ScoreBoard = ({
   setCurrentScore,
   setCurrentLevel,
   setShowLevelOverlay,
+  setClickedAnimals,
 }) => {
   const onStartNewGameClick = () => {
     setIsGameOver(false);
@@ -15,6 +16,7 @@ export const ScoreBoard = ({
     setCurrentScore(0);
     setCurrentLevel(1);
     setShowLevelOverlay(true);
+    setClickedAnimals([]);
   };
 
   return (

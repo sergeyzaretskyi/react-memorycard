@@ -11,6 +11,7 @@ export const App = () => {
   const [currentScore, setCurrentScore] = useState(0);
   const [currentLevel, setCurrentLevel] = useState(1);
   const [showLevelOverlay, setShowLevelOverlay] = useState(true);
+  const [clickedAnimals, setClickedAnimals] = useState([]);
 
   useEffect(() => {
     localStorage.setItem('highestScore', highestScore);
@@ -27,6 +28,7 @@ export const App = () => {
           setCurrentScore,
           setCurrentLevel,
           setShowLevelOverlay,
+          setClickedAnimals,
         }}
       />
       <GameBoard
@@ -43,6 +45,8 @@ export const App = () => {
           setCurrentLevel,
           showLevelOverlay,
           setShowLevelOverlay,
+          clickedAnimals,
+          setClickedAnimals,
         }}
       />
     </>

@@ -15,8 +15,9 @@ export const GameStarted = ({
   setHighestScore,
   currentScore,
   setCurrentScore,
+  clickedAnimals,
+  setClickedAnimals,
 }) => {
-  const [clickedAnimals, setClickedAnimals] = useState([]);
   const [isGameFinished, setIsGameFinished] = useState(false);
 
   const renderAnimals = (count) => {
@@ -59,6 +60,7 @@ export const GameStarted = ({
             setCurrentLevel,
             highestScore,
             setIsGameFinished,
+            setClickedAnimals,
           }}
         />
       ) : showLevelOverlay ? (

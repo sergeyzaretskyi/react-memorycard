@@ -7,6 +7,7 @@ export const GameFinished = ({
   setCurrentLevel,
   highestScore,
   setIsGameFinished,
+  setClickedAnimals,
 }) => {
   const onPlayAgainClick = () => {
     setIsGameOver(false);
@@ -14,6 +15,7 @@ export const GameFinished = ({
     setCurrentScore(0);
     setCurrentLevel(1);
     setIsGameFinished(false);
+    setClickedAnimals([]);
   };
 
   return (
