@@ -9,6 +9,8 @@ export const App = () => {
     localStorage.getItem('highestScore') || 0
   );
   const [currentScore, setCurrentScore] = useState(0);
+  const [currentLevel, setCurrentLevel] = useState(1);
+  const [showLevelOverlay, setShowLevelOverlay] = useState(true);
 
   useEffect(() => {
     localStorage.setItem('highestScore', highestScore);
@@ -16,7 +18,17 @@ export const App = () => {
 
   return (
     <>
-      <ScoreBoard {...{ highestScore, currentScore }} />
+      <ScoreBoard
+        {...{
+          highestScore,
+          currentScore,
+          setIsGameOver,
+          setIsGameStarted,
+          setCurrentScore,
+          setCurrentLevel,
+          setShowLevelOverlay,
+        }}
+      />
       <GameBoard
         {...{
           isGameOver,
@@ -27,6 +39,10 @@ export const App = () => {
           setIsGameStarted,
           setHighestScore,
           setCurrentScore,
+          currentLevel,
+          setCurrentLevel,
+          showLevelOverlay,
+          setShowLevelOverlay,
         }}
       />
     </>
