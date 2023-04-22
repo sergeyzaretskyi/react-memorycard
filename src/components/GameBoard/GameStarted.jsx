@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { animalNames, animalsNeeded, shuffleArray } from '../../utils/utils';
 import { LevelOverlay } from '../LevelOverlay';
 import { GameCard } from '../GameCard';
+import { GameFinished } from '../GameFinished';
 
 export const GameStarted = ({
   currentLevel,
   setCurrentLevel,
   showLevelOverlay,
+  setShowLevelOverlay,
   setIsGameOver,
   setIsGameStarted,
   highestScore,
@@ -15,6 +17,7 @@ export const GameStarted = ({
   setCurrentScore,
 }) => {
   const [clickedAnimals, setClickedAnimals] = useState([]);
+  const [isGameFinished, setIsGameFinished] = useState(false);
 
   const renderAnimals = (count) => {
     return (
@@ -35,6 +38,8 @@ export const GameStarted = ({
                 setHighestScore,
                 currentLevel,
                 setCurrentLevel,
+                setShowLevelOverlay,
+                setIsGameFinished,
               }}
             />
           ))
@@ -45,7 +50,18 @@ export const GameStarted = ({
 
   return (
     <>
-      {showLevelOverlay ? (
+      {isGameFinished ? (
+        <GameFinished
+          {...{
+            setIsGameOver,
+            setIsGameStarted,
+            setCurrentScore,
+            setCurrentLevel,
+            highestScore,
+            setIsGameFinished,
+          }}
+        />
+      ) : showLevelOverlay ? (
         <LevelOverlay {...{ currentLevel }} />
       ) : (
         renderAnimals(animalsNeeded(currentLevel))
