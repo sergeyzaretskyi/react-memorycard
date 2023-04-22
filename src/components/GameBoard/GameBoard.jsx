@@ -22,7 +22,7 @@ export const GameBoard = ({
     }, 2000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [showLevelOverlay]);
 
   return (
     <Container className="mt-3 d-flex gap-2 justify-content-center flex-wrap">
@@ -32,6 +32,7 @@ export const GameBoard = ({
             currentLevel,
             setCurrentLevel,
             showLevelOverlay,
+            setShowLevelOverlay,
             setIsGameOver,
             setIsGameStarted,
             highestScore,
