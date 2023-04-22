@@ -13,6 +13,8 @@ export const GameCard = ({
   setHighestScore,
   currentLevel,
   setCurrentLevel,
+  setShowLevelOverlay,
+  setIsGameFinished,
 }) => {
   const onAnimalClick = (animal) => {
     const isAnimalClicked = clickedAnimals.includes(animal);
@@ -30,6 +32,11 @@ export const GameCard = ({
 
       if (clickedAnimals.length + 1 === animalsNeeded(currentLevel)) {
         setCurrentLevel((prev) => prev + 1);
+        setClickedAnimals([]);
+
+        currentLevel === 13
+          ? setIsGameFinished(true)
+          : setShowLevelOverlay(true);
       }
     }
   };
