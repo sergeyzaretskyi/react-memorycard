@@ -1,6 +1,22 @@
 import { Button, Container, Navbar } from 'react-bootstrap';
 
-export const ScoreBoard = ({ highestScore, currentScore }) => {
+export const ScoreBoard = ({
+  highestScore,
+  currentScore,
+  setIsGameOver,
+  setIsGameStarted,
+  setCurrentScore,
+  setCurrentLevel,
+  setShowLevelOverlay,
+}) => {
+  const onStartNewGameClick = () => {
+    setIsGameOver(false);
+    setIsGameStarted(true);
+    setCurrentScore(0);
+    setCurrentLevel(1);
+    setShowLevelOverlay(true);
+  };
+
   return (
     <Navbar bg="dark" variant="dark" expand="md">
       <Container>
@@ -18,7 +34,10 @@ export const ScoreBoard = ({ highestScore, currentScore }) => {
               Highest score: {highestScore}
             </Navbar.Text>
           </div>
-          <Button className="d-flex justify-content-center d-md-flex justify-content-md-end mx-auto mx-md-0">
+          <Button
+            onClick={() => onStartNewGameClick()}
+            className="d-flex justify-content-center d-md-flex justify-content-md-end mx-auto mx-md-0"
+          >
             Start new game
           </Button>
         </Navbar.Collapse>
