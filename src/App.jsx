@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { GameBoard } from './components/GameBoard';
+import { GameBoard } from './components/GameBoard/GameBoard';
 import { ScoreBoard } from './components/ScoreBoard';
 
 export const App = () => {
