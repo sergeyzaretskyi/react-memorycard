@@ -12,10 +12,11 @@ export const GameBoard = ({
   setIsGameStarted,
   setHighestScore,
   setCurrentScore,
+  currentLevel,
+  setCurrentLevel,
+  showLevelOverlay,
+  setShowLevelOverlay,
 }) => {
-  const [showLevelOverlay, setShowLevelOverlay] = useState(true);
-  const [currentLevel, setCurrentLevel] = useState(1);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLevelOverlay(false);
