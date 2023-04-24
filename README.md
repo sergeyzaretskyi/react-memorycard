@@ -1,7 +1,7 @@
 # ReactJS Memory Card Game
 
 <p align="center">
-  <img alt="screenshot" src="https://raw.githubusercontent.com/sergeyzaretskyi/images-repo/main/screenshots/react-memory-card.png">
+  <a href="https://react-memorycard.vercel.app/" target="_blank"><img alt="screenshot" src="https://raw.githubusercontent.com/sergeyzaretskyi/images-repo/main/screenshots/react-memory-card.png"></a>
 </p>
 
 This is a simple ReactJS memory card game. The main purpose of the game is to remember the animals that you click and avoid clicking them again, so that you can move on to the next level. If you click the same animal twice, you lose.
