@@ -37,7 +37,7 @@ export const ScoreBoard = ({
             </Navbar.Text>
           </div>
           <Button
-            onClick={() => onStartNewGameClick()}
+            onClick={onStartNewGameClick}
             className="d-flex justify-content-center d-md-flex justify-content-md-end mx-auto mx-md-0"
           >
             Start new game

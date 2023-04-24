@@ -42,7 +42,7 @@ export const GameOverScreen = ({
         come back to play again soon.
       </p>
 
-      <Button onClick={() => onNewGameClick()} size="lg" className="mt-4">
+      <Button onClick={onNewGameClick} size="lg" className="mt-4">
         New game
       </Button>
     </Container>

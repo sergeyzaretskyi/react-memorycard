@@ -28,7 +28,7 @@ export const GameFinished = ({
           <b>{highestScore}</b> points.
         </p>
 
-        <Button onClick={() => onPlayAgainClick()} size="lg" className="mt-4">
+        <Button onClick={onPlayAgainClick} size="lg" className="mt-4">
           Play again
         </Button>
       </div>
