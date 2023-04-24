@@ -8,10 +8,19 @@ This is a simple ReactJS memory card game. The main purpose of the game is to re
 
 ## Table of Contents
 
+-   [Technologies Used](#TechnologiesUsed)
 -   [Installation](#installation)
 -   [Gameplay](#gameplay)
 -   [Contributing](#contributing)
 -   [License](#license)
+
+## Technologies Used
+
+The following technologies were used in the development of this project:
+
+-   JavaScript
+-   React
+-   React Bootstrap
 
 ## Installation
 
