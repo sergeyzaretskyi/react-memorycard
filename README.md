@@ -6,14 +6,6 @@
 
 This is a simple ReactJS memory card game. The main purpose of the game is to remember the animals that you click and avoid clicking them again, so that you can move on to the next level. If you click the same animal twice, you lose.
 
-## Table of Contents
-
--   [Technologies Used](#TechnologiesUsed)
--   [Installation](#installation)
--   [Gameplay](#gameplay)
--   [Contributing](#contributing)
--   [License](#license)
-
 ## Technologies Used
 
 The following technologies were used in the development of this project:
@@ -21,6 +13,13 @@ The following technologies were used in the development of this project:
 -   JavaScript
 -   React
 -   React Bootstrap
+
+## Table of Contents
+
+-   [Installation](#installation)
+-   [Gameplay](#gameplay)
+-   [Contributing](#contributing)
+-   [License](#license)
 
 ## Installation
 
