@@ -57,6 +57,7 @@ export const GameBoard = ({
             setCurrentScore,
             setCurrentLevel,
             setClickedAnimals,
+            setShowLevelOverlay,
           }}
         />
       )}

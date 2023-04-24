@@ -8,6 +8,7 @@ export const GameOverScreen = ({
   setCurrentScore,
   setCurrentLevel,
   setClickedAnimals,
+  setShowLevelOverlay,
 }) => {
   const onNewGameClick = () => {
     setIsGameOver(false);
@@ -15,6 +16,7 @@ export const GameOverScreen = ({
     setCurrentScore(0);
     setCurrentLevel(1);
     setClickedAnimals([]);
+    setShowLevelOverlay(true);
   };
 
   return (

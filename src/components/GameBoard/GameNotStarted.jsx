@@ -10,6 +10,7 @@ export const GameNotStarted = ({
   setCurrentScore,
   setCurrentLevel,
   setClickedAnimals,
+  setShowLevelOverlay,
 }) => {
   return (
     <>
@@ -23,6 +24,7 @@ export const GameNotStarted = ({
             setCurrentScore,
             setCurrentLevel,
             setClickedAnimals,
+            setShowLevelOverlay,
           }}
         />
       ) : (
